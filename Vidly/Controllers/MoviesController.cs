@@ -5,11 +5,24 @@ using System.Web;
 using System.Web.Mvc;
 using Vidly.Models;
 using Vidly.ViewModels;
+using System.Data.Entity;
 
 namespace Vidly.Controllers
 {
     public class MoviesController : Controller
     {
+        private MyDBContext _context;
+
+        public MoviesController()
+        {
+            _context = new MyDBContext();
+
+        }
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
+
         //[Route("movies/released/{year}/{month:regex(\\d{2}):range(1,12)}")]
         // GET: Moveis/Random
         public ActionResult Random()
@@ -35,10 +48,10 @@ namespace Vidly.Controllers
 
         }
 
-        public ActionResult Edit(int id)
-        {
-            return Content("id=" + id);
-        }
+        //public ActionResult Edit(int id)
+        //{
+        //    return Content("id=" + id);
+        //}
         //public ActionResult Index(int? pageIndex, string sortBy)
         //{
         //    if (!pageIndex.HasValue)
@@ -49,25 +62,24 @@ namespace Vidly.Controllers
 
         //    return Content(String.Format("pageIndex={0}&sortBy ={1}", pageIndex, sortBy));
         //}
-        public ActionResult ByReleaseDate(int year, int month)
-        {
-            return Content(year + "/" + month);
-        }
-
         public ViewResult Index()
         {
-            var movies = GetMovies();
+            var movies = _context.Movies.Include(m => m.MovieGenre).ToList();
 
             return View(movies);
         }
 
-        private IEnumerable<Movie> GetMovies()
+        public ActionResult Details(int id)
         {
-            return new List<Movie>
-            {
-                new Movie {Name = "Shrek", Id = 1},
-                new Movie {Name = "Wall-e", Id = 2}
-            };
+            var movie = _context.Movies.Include(m => m.MovieGenre).SingleOrDefault(m => m.Id == id);
+            if (movie == null)
+                return HttpNotFound();
+            return View(movie);
+        }
+
+        public ActionResult ByReleaseDate(int year, int month)
+        {
+            return Content(year + "/" + month);
         }
     }
 }

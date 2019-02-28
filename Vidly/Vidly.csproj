@@ -170,11 +170,20 @@
     <Compile Include="Migrations\201902281750465_addMemIdAsRequiredField.Designer.cs">
       <DependentUpon>201902281750465_addMemIdAsRequiredField.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201902281839503_addMoviesPropertiesandMovieGenres.cs" />
+    <Compile Include="Migrations\201902281839503_addMoviesPropertiesandMovieGenres.Designer.cs">
+      <DependentUpon>201902281839503_addMoviesPropertiesandMovieGenres.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902281845031_addMovieGenres.cs" />
+    <Compile Include="Migrations\201902281845031_addMovieGenres.Designer.cs">
+      <DependentUpon>201902281845031_addMovieGenres.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\DBContext.cs" />
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Movie.cs" />
+    <Compile Include="Models\MovieGenre.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\RandomMovieViewModel.cs" />
   </ItemGroup>
@@ -260,6 +269,7 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Movies\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -301,6 +311,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201902281750465_addMemIdAsRequiredField.resx">
       <DependentUpon>201902281750465_addMemIdAsRequiredField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902281839503_addMoviesPropertiesandMovieGenres.resx">
+      <DependentUpon>201902281839503_addMoviesPropertiesandMovieGenres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902281845031_addMovieGenres.resx">
+      <DependentUpon>201902281845031_addMovieGenres.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
