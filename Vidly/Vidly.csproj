@@ -162,6 +162,14 @@
     <Compile Include="Migrations\201902281648171_Name-UpdateMembershipWithName.Designer.cs">
       <DependentUpon>201902281648171_Name-UpdateMembershipWithName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201902281726015_AddCustomerBirthdate.cs" />
+    <Compile Include="Migrations\201902281726015_AddCustomerBirthdate.Designer.cs">
+      <DependentUpon>201902281726015_AddCustomerBirthdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902281750465_addMemIdAsRequiredField.cs" />
+    <Compile Include="Migrations\201902281750465_addMemIdAsRequiredField.Designer.cs">
+      <DependentUpon>201902281750465_addMemIdAsRequiredField.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\DBContext.cs" />
@@ -287,6 +295,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201902281648171_Name-UpdateMembershipWithName.resx">
       <DependentUpon>201902281648171_Name-UpdateMembershipWithName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902281726015_AddCustomerBirthdate.resx">
+      <DependentUpon>201902281726015_AddCustomerBirthdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902281750465_addMemIdAsRequiredField.resx">
+      <DependentUpon>201902281750465_addMemIdAsRequiredField.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
