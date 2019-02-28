@@ -158,6 +158,10 @@
     <Compile Include="Migrations\201902211906574_ApplyAnnotationsToCustomerName.Designer.cs">
       <DependentUpon>201902211906574_ApplyAnnotationsToCustomerName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201902281648171_Name-UpdateMembershipWithName.cs" />
+    <Compile Include="Migrations\201902281648171_Name-UpdateMembershipWithName.Designer.cs">
+      <DependentUpon>201902281648171_Name-UpdateMembershipWithName.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\DBContext.cs" />
@@ -280,6 +284,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201902211906574_ApplyAnnotationsToCustomerName.resx">
       <DependentUpon>201902211906574_ApplyAnnotationsToCustomerName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902281648171_Name-UpdateMembershipWithName.resx">
+      <DependentUpon>201902281648171_Name-UpdateMembershipWithName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
