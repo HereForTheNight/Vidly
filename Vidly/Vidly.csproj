@@ -182,6 +182,7 @@
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\DBContext.cs" />
     <Compile Include="Models\MembershipType.cs" />
+    <Compile Include="Models\Min18YearsIfMember.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Models\MovieGenre.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -273,7 +274,6 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Movies\MovieForm.cshtml" />
     <Content Include="Views\Customer\CustomerForm.cshtml" />
-    <Content Include="Views\Movies\New.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
