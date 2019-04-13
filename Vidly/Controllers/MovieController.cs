@@ -10,11 +10,11 @@ using System.Data.Entity;
 
 namespace Vidly.Controllers
 {
-    public class MoviesController : Controller
+    public class MovieController : Controller
     {
         private MyDBContext _context;
 
-        public MoviesController()
+        public MovieController()
         {
             _context = new MyDBContext();
 
@@ -25,7 +25,7 @@ namespace Vidly.Controllers
         }
 
         //[Route("movies/released/{year}/{month:regex(\\d{2}):range(1,12)}")]
-        // GET: Moveis/Random
+        // GET: Movies/Random
         public ActionResult Random()
         {
             var movie = new Movie() { Name = "Shrek!" };
@@ -44,6 +44,7 @@ namespace Vidly.Controllers
             return View(viewModel);
 
         }
+
         public ViewResult Index()
         {
             var movies = _context.Movies.Include(m => m.MovieGenre).ToList();
