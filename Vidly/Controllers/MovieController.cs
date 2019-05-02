@@ -105,7 +105,7 @@ namespace Vidly.Controllers
             }
 
             _context.SaveChanges();
-            return RedirectToAction("Index", "Movies");
+            return RedirectToAction("Index", "Movie");
         }
 
         public ActionResult ByReleaseDate(int year, int month)
