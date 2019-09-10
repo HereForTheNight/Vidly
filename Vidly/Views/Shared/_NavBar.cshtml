@@ -1,21 +1,24 @@
-﻿
-<nav class="navbar navbar-expand-sm navbar-light fixed-top bg-light">
-    <div class="container">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        @Html.ActionLink("Vidly", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-        <div class="navbar-collapse collapse" id="navbarSupportedContent">
-            <ul class="nav navbar-nav mr-auto">
-                <li class="nav-item">@Html.ActionLink("Customers", "Index", "Customer", null, new { @class = "nav-link" })</li>
-                <li class="nav-item">@Html.ActionLink("Movies", "Index", "Movie", null, new { @class = "nav-link" })</li>
-            </ul>
+﻿<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    @Html.ActionLink("Vidly", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-            @*<ul class="nav navbar-nav navbar-right mr-auto">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                @*<a class="nav-link" href="#">Link</a>*@
+                @Html.ActionLink("Customers", "Index", "Customer", null, new { @class = "nav-link" })
+            </li>
+            <li>
+                @Html.ActionLink("Movies", "Index", "Movie", null, new { @class = "nav-link" })
+            </li>
+        </ul>
+        @*<ul class="nav navbar-nav navbar-right mr-auto">*@
+        @*<ul class="navbar-nav navbar-right">
             <li class="nav-item"><a href="/Account/Register" id="registerLink" class="nav-link">Register</a></li>
             <li class="nav-item"><a href="/Account/Login" id="loginLink" class="nav-link">Log in</a></li>
-            </ul>*@
-
-        </div>
+        </ul>*@
+        @Html.Partial("_LoginPartial")
     </div>
 </nav>

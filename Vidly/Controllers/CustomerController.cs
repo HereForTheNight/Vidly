@@ -26,10 +26,13 @@ namespace Vidly.Controllers
 
         public ViewResult Index()
         {
+            if (User.IsInRole(RoleName.CanManageCustomers))
+                return View("Index");
 
             return View();
         }
 
+        [Authorize(Roles = RoleName.CanManageCustomers)]
         public ActionResult Details(int id)
         {
             var customer = _context.Customers.Include(c => c.MembershipType).SingleOrDefault(c => c.Id == id);
@@ -38,6 +41,7 @@ namespace Vidly.Controllers
             return View(customer);
         }
 
+        [Authorize(Roles = RoleName.CanManageCustomers)]
         public ActionResult New()
         {
             var membershipTypes = _context.MembershipType.ToList();
@@ -79,6 +83,7 @@ namespace Vidly.Controllers
             return RedirectToAction("Index", "Customer");
         }
 
+        [Authorize(Roles = RoleName.CanManageCustomers)]
         public ActionResult Edit(int id)
         {
             var customer = _context.Customers.SingleOrDefault(c => c.Id == id);

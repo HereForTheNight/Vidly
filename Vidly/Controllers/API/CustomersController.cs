@@ -20,7 +20,6 @@ namespace Vidly.Controllers.API
             _context = new MyDBContext();
         }
 
-
         //GET /api/customers
         public IHttpActionResult GetCustomers()
         {
@@ -45,6 +44,7 @@ namespace Vidly.Controllers.API
 
         // POST /api/cusstomers
         [HttpPost]
+        [Authorize(Roles = RoleName.CanManageCustomers)]
         public IHttpActionResult CreateCustomer(CustomerDto customerDto)
         {
             if (!ModelState.IsValid)
@@ -61,6 +61,7 @@ namespace Vidly.Controllers.API
 
         //PUT /api/customers/1
         [HttpPut]
+        [Authorize(Roles = RoleName.CanManageCustomers)]
         public IHttpActionResult UpdateCustomer(int id, CustomerDto customerDto)
         {
             if (!ModelState.IsValid)
@@ -80,6 +81,7 @@ namespace Vidly.Controllers.API
         }
 
         [HttpDelete]
+        [Authorize(Roles = RoleName.CanManageCustomers)]
         public IHttpActionResult DeleteCustomer(int id)
         {
 
@@ -93,7 +95,5 @@ namespace Vidly.Controllers.API
 
             return Ok();
         }
-
     }
-
 }
